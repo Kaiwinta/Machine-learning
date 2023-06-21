@@ -14,6 +14,10 @@ Different type of machine learning :
         For all input we have the output so the model can compare
         what he calculate and what is the real answer in order to learn
 
+        Learning task:
+            Classification                  Pizza/ Keba/ Orange
+            Binary classificatiion          Spam/not Spam
+
     02) Unsupervised learning
         The goal for the computer is to regonize pattern 
         He dont provide an anwser but put all the data in some categories
@@ -22,6 +26,21 @@ Different type of machine learning :
     03) Renforcement Learning
         Based on reward an punition 
         We reward the computer for doing something that may be good
+"""
+
+
+"""
+    Bunch of input that go into a model
+    And the ouput is a prediction
+    
+    All the input are called features
+    
+    Different types of features:
+        Qualitative :   Categorical data ex:(gender) 
+            It can have an order or not ex: rating can have number but not nationality
+
+        Quantitative : Numerical valued date
+
 """
 
 #L'on ajoute le nom des colonnes à chaque colonne
