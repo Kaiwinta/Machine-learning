@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from imblearn.over_sampling import RandomOverSampler
 
 #Le dataset importer parle de rayon lumineux d'un télescope
 #Les class sont g pour gamma et f pour l'autre
@@ -82,6 +84,25 @@ for label in cols[:-1]:
 
 train , valid , test = np.split(df.sample(frac=1), [int(0.6* len(df)), int(0.8* len(df))])
 
-def scale_dataset(dataframe):
-    X = dataframe[dataframe.cols[:-1]].values
-    Y = dataframe[dataframe.cols[-1]].values
+def scale_dataset(dataframe , oversample = False):
+    X = dataframe[dataframe.columns[:-1]].values
+    Y = dataframe[dataframe.columns[-1]].values
+    #X is 2D    Y is 1D
+
+    scaler = StandardScaler()
+    X = scaler.fit_transform(X)
+
+    #L'on peut ajouter des samples alléatoire en cas de mauvaise répartition des résultats voulu
+    if oversample:
+        ros = RandomOverSampler()
+
+        #On veut autant de cas ou class == 0 que class == 1 et c'est ce que fait cette ligne
+        X , Y = ros.fit_resample(X,Y)
+
+    #We turn the whole data set into an array 
+    #We also tranform Y into a 2D array
+    data = np.hstack((X, np.reshape(Y , (-1,1))))
+                     
+    return data, X, Y
+
+train , X_train , Y_train = scale_dataset(train , oversample = True)
