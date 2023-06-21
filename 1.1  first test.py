@@ -81,3 +81,7 @@ for label in cols[:-1]:
     #plt.show()
 
 train , valid , test = np.split(df.sample(frac=1), [int(0.6* len(df)), int(0.8* len(df))])
+
+def scale_dataset(dataframe):
+    X = dataframe[dataframe.cols[:-1]].values
+    Y = dataframe[dataframe.cols[-1]].values
