@@ -123,7 +123,7 @@ test , X_test , Y_test = scale_dataset(test , oversample = False)
             d = sqrt((x1 - x2)**2 + (y1 - y2)**2)
     Test:
 """
-knn_model = KNeighborsClassifier(n_neighbors=1)
+knn_model = KNeighborsClassifier(n_neighbors=5)
 knn_model.fit(X_train , Y_train)
 
 y_pred = knn_model.predict(X_test)
