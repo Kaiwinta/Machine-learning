@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import RandomOverSampler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
 
 #Le dataset importer parle de rayon lumineux d'un télescope
 #Les class sont g pour gamma et f pour l'autre
@@ -106,3 +108,23 @@ def scale_dataset(dataframe , oversample = False):
     return data, X, Y
 
 train , X_train , Y_train = scale_dataset(train , oversample = True)
+
+#L'on a pas besoin d'équilibrer la partie de validation et de test, l'inverse est mieux
+valid , X_valid , Y_valid = scale_dataset(valid , oversample = False)
+test , X_test , Y_test = scale_dataset(test , oversample = False)
+
+
+
+"""
+    Model:
+        K-nearest neighbors:
+            We put data on a graph
+            And mesure distance between each point with euclidian distance
+            d = sqrt((x1 - x2)**2 + (y1 - y2)**2)
+    Test:
+"""
+knn_model = KNeighborsClassifier(n_neighbors=1)
+knn_model.fit(X_train , Y_train)
+
+y_pred = knn_model.predict(X_test)
+print(classification_report(Y_test , y_pred))
