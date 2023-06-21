@@ -22,7 +22,7 @@ Different type of machine learning :
             Regression:
                 Predict continues values ex: crypto 
 
-    02) Unsupervised learning
+    02) Unsupervised learning 
         The goal for the computer is to regonize pattern 
         He dont provide an anwser but put all the data in some categories
         Bassed on what he calculated
@@ -36,8 +36,10 @@ Different type of machine learning :
 """
     Bunch of input that go into a model
     And the ouput is a prediction
-    
+    noted Y
+
     All the input are called features
+    And are noted X
     
     Different types of features:
         Qualitative :   Categorical data ex:(gender) 
