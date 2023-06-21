@@ -15,8 +15,12 @@ Different type of machine learning :
         what he calculate and what is the real answer in order to learn
 
         Learning task:
-            Classification                  Pizza/ Keba/ Orange
-            Binary classificatiion          Spam/not Spam
+            Classification:
+                Classification                  Pizza/ Keba/ Orange
+                Binary classificatiion          Spam/not Spam
+
+            Regression:
+                Predict continues values ex: crypto 
 
     02) Unsupervised learning
         The goal for the computer is to regonize pattern 
