@@ -6,6 +6,7 @@ from imblearn.over_sampling import RandomOverSampler
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
 from sklearn.naive_bayes import GaussianNB
+from sklearn.linear_model import LogisticRegression
 
 #Le dataset importer parle de rayon lumineux d'un télescope
 #Les class sont g pour gamma et f pour l'autre
@@ -130,10 +131,31 @@ knn_model.fit(X_train , Y_train)
 y_pred = knn_model.predict(X_test)
 print(classification_report(Y_test , y_pred))
 
-#Naive Bayes
+#Naive Bayes        other model
 n_model = GaussianNB()
 n_model = n_model.fit(X_train , Y_train)
 
 y_pred = n_model.predict(X_test)
+
+print(classification_report(Y_test, y_pred))
+
+"""
+    #Logistic Regression
+
+    ln(P/1 - P) = mx +b
+
+    <==>    P/1-P = e(mx +b)
+    <==>    P = (1-P)* e(mx +b)
+    <==>    P = 1/(1+e(-(mx+b)))
+
+    Also knw as the sigmoid function
+    S(x) = 1/ (1+e(-x))
+
+    In our case x = mx +b
+"""
+logistic_model = LogisticRegression()
+logistic_model = logistic_model.fit(X_train , Y_train)
+
+y_pred = logistic_model.predict(X_test)
 
 print(classification_report(Y_test, y_pred))
