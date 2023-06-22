@@ -118,7 +118,7 @@ test , X_test , Y_test = scale_dataset(test , oversample = False)
 
 
 """
-    Model:
+    Model for classification:
         K-nearest neighbors:
             We put data on a graph
             And mesure distance between each point with euclidian distance
@@ -159,3 +159,9 @@ logistic_model = logistic_model.fit(X_train , Y_train)
 y_pred = logistic_model.predict(X_test)
 
 print(classification_report(Y_test, y_pred))
+
+"""
+    Suport Vector Machines      SVM
+
+    Sur un graphe l'on met toute les donné et les sépare par un trait en fonction de la classe
+"""
