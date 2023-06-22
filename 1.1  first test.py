@@ -5,6 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
+from sklearn.naive_bayes import GaussianNB
 
 #Le dataset importer parle de rayon lumineux d'un télescope
 #Les class sont g pour gamma et f pour l'autre
@@ -128,3 +129,11 @@ knn_model.fit(X_train , Y_train)
 
 y_pred = knn_model.predict(X_test)
 print(classification_report(Y_test , y_pred))
+
+#Naive Bayes
+n_model = GaussianNB()
+n_model = n_model.fit(X_train , Y_train)
+
+y_pred = n_model.predict(X_test)
+
+print(classification_report(Y_test, y_pred))
