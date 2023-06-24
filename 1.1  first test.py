@@ -164,4 +164,5 @@ print(classification_report(Y_test, y_pred))
     Suport Vector Machines      SVM
 
     Sur un graphe l'on met toute les donné et les sépare par un trait en fonction de la classe
-"""
+    On trace une parralèle qui touche chaque premier point de chaque classe et c'ets notre marge
+    """
