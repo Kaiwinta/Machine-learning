@@ -64,6 +64,8 @@ Different type of machine learning :
 
 """
 """
+    Type of Loss
+
     L1 Loss:    loss = sum(abs(y_real - y_predicted))
     L2 Loss:    loss = sum((y_real - y_predicted)**2)
     Binary Cross entropy Loss  ==> un bordel
