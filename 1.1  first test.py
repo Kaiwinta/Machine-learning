@@ -167,4 +167,7 @@ print(classification_report(Y_test, y_pred))
 
     Sur un graphe l'on met toute les donné et les sépare par un trait en fonction de la classe
     On trace une parralèle qui touche chaque premier point de chaque classe et c'ets notre marge
-    """
+
+    Dans el cas ou les donné sontdans une seule dimension l'on peux les placer dasn un repere avecd es coordonnées (x , x**2)
+    Ce qui permet de Pouvoir mieux les diviser      C'est un kernel trick
+"""
