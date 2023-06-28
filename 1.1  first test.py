@@ -7,6 +7,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
 from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC         # stand for support vector classiffier
 
 #Le dataset importer parle de rayon lumineux d'un télescope
 #Les class sont g pour gamma et f pour l'autre
@@ -127,19 +128,21 @@ test , X_test , Y_test = scale_dataset(test , oversample = False)
             d = sqrt((x1 - x2)**2 + (y1 - y2)**2)
     Test:
 """
-knn_model = KNeighborsClassifier(n_neighbors=5)
-knn_model.fit(X_train , Y_train)
+def knn_modelisation():
+    knn_model = KNeighborsClassifier(n_neighbors=5)
+    knn_model.fit(X_train , Y_train)
 
-y_pred = knn_model.predict(X_test)
-print(classification_report(Y_test , y_pred))
+    y_pred = knn_model.predict(X_test)
+    print(classification_report(Y_test , y_pred))
 
 #Naive Bayes        other model
-n_model = GaussianNB()
-n_model = n_model.fit(X_train , Y_train)
+def Naives_Bayes_Model():
+    n_model = GaussianNB()
+    n_model = n_model.fit(X_train , Y_train)
 
-y_pred = n_model.predict(X_test)
+    y_pred = n_model.predict(X_test)
 
-print(classification_report(Y_test, y_pred))
+    print(classification_report(Y_test, y_pred))
 
 """
     #Logistic Regression
@@ -155,12 +158,14 @@ print(classification_report(Y_test, y_pred))
 
     In our case x = mx +b
 """
-logistic_model = LogisticRegression()
-logistic_model = logistic_model.fit(X_train , Y_train)
 
-y_pred = logistic_model.predict(X_test)
+def logistic_modelisation():
+    logistic_model = LogisticRegression()
+    logistic_model = logistic_model.fit(X_train , Y_train)
 
-print(classification_report(Y_test, y_pred))
+    y_pred = logistic_model.predict(X_test)
+
+    print(classification_report(Y_test, y_pred))
 
 """
     Suport Vector Machines      SVM
@@ -171,3 +176,11 @@ print(classification_report(Y_test, y_pred))
     Dans el cas ou les donné sontdans une seule dimension l'on peux les placer dasn un repere avecd es coordonnées (x , x**2)
     Ce qui permet de Pouvoir mieux les diviser      C'est un kernel trick
 """
+
+def svm_modelisation()
+
+    svm_model = SVC()
+    svm_model = svm_model.fit(X_train , Y_train)
+
+    Y_pred = svm_model.predict(X_test)
+    print(classification_report(Y_test , Y_pred))
