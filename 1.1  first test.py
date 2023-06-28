@@ -184,3 +184,10 @@ def svm_modelisation()
 
     Y_pred = svm_model.predict(X_test)
     print(classification_report(Y_test , Y_pred))
+
+
+"""
+    Neural Networks:
+        
+
+"""
