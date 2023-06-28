@@ -188,6 +188,9 @@ def svm_modelisation()
 
 """
     Neural Networks:
-        
+        Fait appel à la backpropagation et au gradient afin de reduire le loss
+
+        Weigth update =    w0.new = w0.old + a*
+                                            a est le learning rate
 
 """
