@@ -9,6 +9,11 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC         # stand for support vector classiffier
 
+
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+
 #Le dataset importer parle de rayon lumineux d'un télescope
 #Les class sont g pour gamma et f pour l'autre
 #Toute la doc sur:  https://archive.ics.uci.edu/dataset/159/magic+gamma+telescope
@@ -207,6 +212,8 @@ def svm_modelisation():
 """
 
 #Neural net
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 import tensorflow as tf
 
@@ -235,3 +242,7 @@ nn_model = tf.keras.Sequential([
 ])
 
 nn_model.compile(optimizer=tf.keras.optimizers.Adam(0.001),loss='binary_crossentropy', metrics=['accuracy'])
+
+history = nn_model.fit(X_train,Y_train, epochs=100, batch_size=32, validation_split=0.2, verbose=0)
+plot_loss(history)
+plot_accuracy(history)
