@@ -9,3 +9,6 @@ A lot of docstring which are what i important for me
 
 The data files is about a telescop and gamma laser
 Source : https://archive.ics.uci.edu/dataset/159/magic+gamma+telescope
+
+The video i'm following is:
+https://www.youtube.com/watch?v=i_LwzRVP7bg&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s
