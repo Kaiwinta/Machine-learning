@@ -190,7 +190,30 @@ def svm_modelisation()
     Neural Networks:
         Fait appel à la backpropagation et au gradient afin de reduire le loss
 
+        La bakcpropagation est une suite de weitgh update 
+        L'on calcul le gradient de loss
+
         Weigth update =    w0.new = w0.old + a*
                                             a est le learning rate
 
 """
+
+
+"""
+    TensorFlow
+
+    La librairie tensorflow est une librairie qui permet de generer les modeles tout en gérant tout
+
+"""
+
+#Neural net
+
+import tensorflow as tf
+
+nn_model = tf.keras.Sequential(
+    tf.keras.layers.Dense(32,activation='relu',input_shape = (10,)),
+    tf.keras.layers.Dense(32,activation='relu'),
+    tf.keras.layers.Dense(1,activation='sigmoid')
+)
+
+nn_model.compile(optimizer=tf.keras.optimizers.Adam(0.001),loss='binary_crossentropy', metrics=['accuracy'])
