@@ -177,7 +177,7 @@ def logistic_modelisation():
     Ce qui permet de Pouvoir mieux les diviser      C'est un kernel trick
 """
 
-def svm_modelisation()
+def svm_modelisation():
 
     svm_model = SVC()
     svm_model = svm_model.fit(X_train , Y_train)
@@ -210,10 +210,10 @@ def svm_modelisation()
 
 import tensorflow as tf
 
-nn_model = tf.keras.Sequential(
+nn_model = tf.keras.Sequential([
     tf.keras.layers.Dense(32,activation='relu',input_shape = (10,)),
     tf.keras.layers.Dense(32,activation='relu'),
     tf.keras.layers.Dense(1,activation='sigmoid')
-)
+])
 
 nn_model.compile(optimizer=tf.keras.optimizers.Adam(0.001),loss='binary_crossentropy', metrics=['accuracy'])
